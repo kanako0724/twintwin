@@ -1,0 +1,18 @@
+<%= render 'nav' %>
+
+<div class="container">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+        <% flash.each do |name, msg| %>
+            <div class="alert alert-<%= name %>">
+                <a class="close" data-dismiss="alert">×</a>
+                <%= msg %>
+            </div>
+        <% end %>
+        <div class="new_twint">
+            <%= bootstrap_form_for(@twint, url: confirm_twints_path) do |f| %>
+              <%= f.text_area :content, class: "form-control", placeholder: "いま、なにしてる？"%>
+              <%= f.submit "ツゥいーと",class: "btn btn-info" %>
+            <% end %>
+        </div>
+    </div>
+</div>

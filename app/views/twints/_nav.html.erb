@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+      <span class="sr-only">メニュー</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="<%= twints_path %>" class="navbar-brand">Twintwin</a>
+  </div>
+ 
+  <div id="gnavi" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "ホーム", twints_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <a class="btn btn-info navbar-btn" href=<%= new_twint_path =%> role="button">ツゥいーと</a>
+    </ul>
+  </div>
+</nav>

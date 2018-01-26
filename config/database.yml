@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  template: template0
+
+development:
+  <<: *default
+  database: twinter_development
+
+test:
+  <<: *default
+  database: twinter_test
+  
+production:
+  <<: *default
+  database: twinter_production
+  username: twinter
+  password: <%= ENV['ACHIEVE_DATABASE_PASSWORD'] %>

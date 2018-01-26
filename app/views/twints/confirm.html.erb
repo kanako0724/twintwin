@@ -1,0 +1,18 @@
+<%= render 'nav' %>
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h3>ツゥいーとしてもよろしいですか？</h3>
+
+    <%= bootstrap_form_for(@twint) do |f| %>
+      <%= f.hidden_field :content %>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p><%= @twint.content %></p>
+        </div>
+      </div>
+      <%= f.submit "ツゥいーと", class: "btn btn-info" %>
+    <% end %>
+　</div>
+</div>
