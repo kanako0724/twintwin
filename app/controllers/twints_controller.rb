@@ -1,26 +1,25 @@
 class TwintsController < ApplicationController
-    @@twint = ""
     def index
         @twints = Twint.all
     end
     
     def new
-        if @@twint == ""
-            @twint = Twint.new
-        else
-            @twint = @@twint
-        end
+        @twint = Twint.new
     end
     
     def create
-        Twint.create(twints_params)
-        @@twint = ""
-        redirect_to twints_path, success: "ツゥいーとトしました！"
+        @twint=Twint.new(twints_params)
+        if params[:back]
+            render :new
+        elsif @twint.save 
+            redirect_to twints_path, success: "ツゥいーとしました！"
+        else
+            render :new
+        end
     end
     
     def confirm
         @twint = Twint.new(twints_params)
-        @@twint = @twint
         if @twint.invalid?
             @twint.errors.full_messages.each do |msg|
                 #これたぶんためだ・・・
