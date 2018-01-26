@@ -14,6 +14,7 @@ class TwintsController < ApplicationController
     
     def create
         Twint.create(twints_params)
+        @@twint = ""
         redirect_to twints_path, success: "ツゥいーとトしました！"
     end
     
